@@ -41,10 +41,11 @@ virtual void cameraDiscovered(CameraSource* source)
     
     if(camera)
     {
-        NETWORK_CONFIG*	network = camera->getNetwork();
+        const NETWORK_CONFIG*	network = camera->getNetwork();
 
         if(network)
-            ATLTRACE(TEXT("DHCP: %s, IP: %s, MASK: %s, GATEWAY: %s, DNS1: %s, DNS2: %s\n"), network->dhcp ? "YES" : "NO", network->ip, network->mask, network->gateway, network->dns1, network->dns2);
+            ATLTRACE(TEXT("DHCP: %s, IP: %s, MASK: %s, GATEWAY: %s, DNS1: %s, DNS2: %s\n"),
+                    network->dhcp ? "YES" : "NO", network->ip, network->mask, network->gateway, network->dns1, network->dns2);
 
         ....
     }
